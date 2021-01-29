@@ -16,7 +16,7 @@ export function sendSlackMessage(link: Link, store: Store) {
       try {
         const result = await web.chat.postMessage({
           channel: channel.replace('#', ''),
-          text: `${Print.inStock(link, store)}\n${givenUrl}`,
+          text: `${Print.inStock(link, store)}\n${givenUrl} <!here>`,
         });
 
         if (!result.ok) {
